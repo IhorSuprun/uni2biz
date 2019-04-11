@@ -1,0 +1,61 @@
+.auth_body{
+    background: rgba(204, 204, 204, 0.3);
+}
+.form-wrapper{
+    display: block;
+    width: 410px;
+    height: 330px;
+    margin: 120px auto;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid silver;
+    border-radius: 10px;
+    background-color: white;
+    /*    background: rgba(51, 51, 51, 0.8);*/
+    /*    color: white;*/
+}
+.btn_auth{
+    width: 140px;
+}
+.form-control{
+    background: rgba(204, 204, 204, 0.3);
+}
+.admin_panel_top{
+    border-bottom: 1px solid #cccccc;
+    height: 6vh;
+    box-shadow: 0px 5px 5px -5px rgba(0,0,0,.2);
+}
+/*new*/
+body{
+    background-color: #1f7daa;
+}          
+.main-nav{
+    background-color: #3486af;
+}
+.main-h{
+
+}
+.my{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.mycontact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.main_buttons{
+    margin-bottom: 0;
+}
+#content{
+    height: auto;
+    margin: 0;
+}
+#users_list_view{
+    height: inherit;
+    margin: 0;
+}
+.details{
+    float: right;
+}
