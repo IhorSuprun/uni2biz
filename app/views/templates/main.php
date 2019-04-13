@@ -10,8 +10,17 @@
         <style>
             .main-cont{
                 height: 80vh;
+                background-color: whitesmoke;
                 margin-bottom: 5vh;
                 overflow: auto;
+            }
+            .menubutton{
+                background: #0e4d73;
+                color: white;
+                border: 0;
+            }
+            .clicked{
+                background: #ed8a32;
             }
         </style>
         <title>Phonebook</title>
@@ -23,17 +32,17 @@
                 <p class="display-5 text-right" ><a href="/users/signout" style="color: white; margin: 3vh">LOGOUT</a></p>   
             <?php endif; ?>
         </div>
-        <div class="container main_buttons">
-            <button type="button" onclick="showContent('users_list_view', 'mycontact_view', 'login_view')">Phonebook</button>
+        <div id='menubuttons' class="container main_buttons">
+            <button type="button" class='menubutton' onclick="showContent('users_list_view', 'mycontact_view', 'login_view')">Phonebook</button>
             <?php if ($_SESSION): ?>
-                <button type="button" onclick="showContent('mycontact_view', 'users_list_view', 'login_view')">My contact</button>
+                <button type="button" class='menubutton' onclick="showContent('mycontact_view', 'users_list_view', 'login_view')">My contact</button>
             <?php else: ?>
-                <button type="button" onclick="showContent('login_view', 'users_list_view', 'mycontact_view')">Login</button>
+                <button type="button" class='menubutton' onclick="showContent('login_view', 'users_list_view', 'mycontact_view')">Login</button>
             <?php endif; ?>        
         </div>
         <div class="container main-cont">  
             <div id="content">
-                <div id="users_list_view" style="display: none">
+                <div id="users_list_view" style="display: block">
                     <?php include 'app/views/content/users_view.php' ?>
                 </div>
                 <div id="mycontact_view" style="display: none">
@@ -47,6 +56,11 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     </body>
     <script>
+        $("#menubuttons button").click(function (e) {
+            e.preventDefault();
+            $("#menubuttons button").removeClass('clicked');
+            $(this).addClass('clicked');
+        });
         function showDetails(id) {
             event.preventDefault();
             if (document.getElementById('details' + id).style.display === "none") {
